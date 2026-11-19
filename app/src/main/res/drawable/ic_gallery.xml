@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path android:fillColor="@color/camera_white" android:pathData="M8,8L22,8A3,3 0,0 1,25 11L25,25A3,3 0,0 1,22 28L8,28A3,3 0,0 1,5 25L5,11A3,3 0,0 1,8 8M26,20L40,20A3,3 0,0 1,43 23L43,37A3,3 0,0 1,40 40L26,40A3,3 0,0 1,23 37L23,23A3,3 0,0 1,26 20" />
+    <path android:fillColor="@color/camera_navy" android:pathData="M9,12L21,12L21,24L9,24Z" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M11,22L15,17L18,20L21,16L21,22Z" />
+    <path android:fillColor="@color/camera_navy" android:pathData="M27,24L39,24L39,36L27,36Z" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M29,34L32,29L35,32L37,28L39,31L39,36L29,36Z" />
+</vector>

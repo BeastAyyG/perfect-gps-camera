@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="camera_black">#FF05080D</color>
+    <color name="camera_navy">#FF0C2340</color>
+    <color name="camera_navy_deep">#FF07182D</color>
+    <color name="camera_navy_soft">#FF173B61</color>
+    <color name="camera_gold">#FFF2A900</color>
+    <color name="camera_gold_bright">#FFFFC857</color>
+    <color name="camera_surface">#FF102A43</color>
+    <color name="camera_white">#FFFFFFFF</color>
+    <color name="camera_text_secondary">#B8C9D9</color>
+    <color name="camera_chrome_secondary">#C6C9CD</color>
+    <color name="camera_chrome_muted">#9A9DA2</color>
+    <color name="camera_accent">#FF55E6A5</color>
+    <color name="camera_line">#FF2D4A65</color>
+    <color name="launcher_background">#FF0C2340</color>
+</resources>

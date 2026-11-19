@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="320dp"
+    android:viewportWidth="360"
+    android:viewportHeight="360">
+    <path android:fillColor="@color/camera_navy_soft" android:pathData="M180,28A152,152 0,1 0,180 332A152,152 0,1 0,180 28" />
+    <path android:fillColor="#227EA8D6" android:pathData="M180,48A132,132 0,1 0,180 312A132,132 0,1 0,180 48" />
+    <path android:fillColor="@color/camera_surface" android:pathData="M78,135L128,135L142,116L218,116L232,135L282,135A18,18 0,0 1,300 153L300,232A18,18 0,0 1,282 250L78,250A18,18 0,0 1,60 232L60,153A18,18 0,0 1,78 135" />
+    <path android:fillColor="@color/camera_navy_deep" android:pathData="M180,157A43,43 0,1 0,180 243A43,43 0,1 0,180 157" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M180,177A23,23 0,1 0,180 223A23,23 0,1 0,180 177" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M180,189A11,11 0,1 0,180 211A11,11 0,1 0,180 189" />
+    <path android:fillColor="@color/camera_white" android:pathData="M84,151L104,151A6,6 0,0 1,104 163L84,163A6,6 0,0 1,84 151" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M256,71A22,22 0,0 0,234 93C234,114 256,143 256,143C256,143 278,114 278,93A22,22 0,0 0,256 71M256,85A10,10 0,1 1,256 105A10,10 0,1 1,256 85" />
+    <path android:fillColor="#66F2A900" android:pathData="M80,282L280,282L280,288L80,288ZM80,298L224,298L224,304L80,304Z" />
+</vector>

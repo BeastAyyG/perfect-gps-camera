@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="preview" type="id" />
+    <item name="gridOverlay" type="id" />
+    <item name="captureButton" type="id" />
+    <item name="flashButton" type="id" />
+    <item name="gridButton" type="id" />
+    <item name="lensButton" type="id" />
+    <item name="locationStatus" type="id" />
+    <item name="coordinatesText" type="id" />
+    <item name="detailsText" type="id" />
+    <item name="zoomText" type="id" />
+    <item name="permissionPanel" type="id" />
+    <item name="permissionTitle" type="id" />
+    <item name="permissionMessage" type="id" />
+    <item name="permissionButton" type="id" />
+</resources>

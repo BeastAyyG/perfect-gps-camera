@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="320dp"
+    android:viewportWidth="360"
+    android:viewportHeight="360">
+    <path android:fillColor="@color/camera_navy_soft" android:pathData="M180,28A152,152 0,1 0,180 332A152,152 0,1 0,180 28" />
+    <path android:fillColor="#227EA8D6" android:pathData="M180,48A132,132 0,1 0,180 312A132,132 0,1 0,180 48" />
+    <path android:fillColor="@color/camera_white" android:pathData="M104,70L232,70A18,18 0,0 1,250 88L250,284A18,18 0,0 1,232 302L104,302A18,18 0,0 1,86 284L86,88A18,18 0,0 1,104 70" />
+    <path android:fillColor="@color/camera_navy_deep" android:pathData="M106,92L230,92A4,4 0,0 1,234 96L234,277A4,4 0,0 1,230 281L106,281A4,4 0,0 1,102 277L102,96A4,4 0,0 1,106 92" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M126,133L136,133L136,226L126,226ZM148,158L158,158L158,226L148,226ZM170,112L180,112L180,226L170,226ZM192,144L202,144L202,226L192,226ZM214,94L224,94L224,226L214,226Z" />
+    <path android:fillColor="@color/camera_accent" android:pathData="M119,246L227,246L227,252L119,252Z" />
+    <path android:fillColor="@color/camera_gold" android:pathData="M244,52A32,32 0,1 0,244 116A32,32 0,1 0,244 52" />
+    <path android:fillColor="@color/camera_white" android:pathData="M234,81L243,90L255,72L260,77L243,96L229,83Z" />
+</vector>

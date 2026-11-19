@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PerfectGpsCamera.Splash" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/camera_navy_deep</item>
+        <item name="android:navigationBarColor">@color/camera_navy_deep</item>
+        <item name="android:windowBackground">@drawable/bg_splash_gradient</item>
+        <item name="android:windowSplashScreenBackground">@color/camera_navy_deep</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_srm_mark</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/camera_navy</item>
+        <item name="android:windowSplashScreenAnimationDuration">450</item>
+        <item name="android:colorAccent">@color/camera_gold</item>
+    </style>
+</resources>
