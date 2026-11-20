@@ -141,6 +141,44 @@ class PhotoFingerprintTest {
         assertTrue(jpeg.contentEquals(stripped))
     }
 
+    /**
+     * The save path writes EXIF after the photo bytes are produced, and the
+     * EXIF write rewrites the JPEG. The fingerprint must therefore be applied
+     * to the final bytes, after that rewrite, or verify reports Tampered for
+     * a genuine photo. This pins that ordering with a fake APP1 segment
+     * standing in for the EXIF segment ExifInterface inserts.
+     */
+    @Test
+    fun verifyAuthenticWhenFingerprintAppliedAfterExifWrite() {
+        val withExif = withApp1Segment(minimalJpeg())
+        val stamped = PhotoFingerprint.embed(withExif, location(), 1795000001000L)
+        val result = PhotoFingerprint.verify(stamped)
+        assertTrue(result is PhotoFingerprint.Verification.Authentic)
+    }
+
+    @Test
+    fun verifyReportsTamperedWhenFingerprintAppliedBeforeExifWrite() {
+        val stamped = PhotoFingerprint.embed(minimalJpeg(), location(), 1795000001000L)!!
+        val withExif = withApp1Segment(stamped)
+        val result = PhotoFingerprint.verify(withExif)
+        assertTrue(result is PhotoFingerprint.Verification.Tampered)
+    }
+
+    private fun withApp1Segment(jpeg: ByteArray): ByteArray {
+        val payload = "Exif\u0000\u0000FAKE".toByteArray(Charsets.UTF_8)
+        val length = payload.size + 2
+        val out = ByteArray(jpeg.size + 4 + payload.size)
+        out[0] = 0xFF.toByte()
+        out[1] = 0xD8.toByte()
+        out[2] = 0xFF.toByte()
+        out[3] = 0xE1.toByte()
+        out[4] = ((length ushr 8) and 0xFF).toByte()
+        out[5] = (length and 0xFF).toByte()
+        System.arraycopy(payload, 0, out, 6, payload.size)
+        System.arraycopy(jpeg, 2, out, 6 + payload.size, jpeg.size - 2)
+        return out
+    }
+
     @Test
     fun dotCodeIsDeterministicAndChangesWithTime() {
         val loc = location()
