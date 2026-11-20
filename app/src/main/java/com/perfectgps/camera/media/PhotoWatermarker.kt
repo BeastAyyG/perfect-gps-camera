@@ -21,6 +21,21 @@ object PhotoWatermarker {
             lines: Array<out String?>?,
             rotationDegrees: Int,
             mirror: Boolean
+    ): ByteArray? = apply(jpeg, lines, rotationDegrees, mirror, null)
+
+    /**
+     * Stamps the visible watermark and, when a dot code is supplied, draws the
+     * printer-dot fingerprint grid into the panel. The dots encode the code
+     * from [PhotoFingerprint.dotCodeHex], which is derived from the same
+     * location and time the data block carries.
+     */
+    @JvmStatic
+    fun apply(
+            jpeg: ByteArray?,
+            lines: Array<out String?>?,
+            rotationDegrees: Int,
+            mirror: Boolean,
+            dotCodeHex: String?
     ): ByteArray? {
         if (jpeg == null || jpeg.isEmpty() || lines == null || lines.isEmpty()) {
             return jpeg
@@ -36,6 +51,9 @@ object PhotoWatermarker {
             val canvas = Canvas(output)
             canvas.drawBitmap(upright, 0.0f, 0.0f, null)
             drawWatermark(canvas, output.width, output.height, lines)
+            if (!dotCodeHex.isNullOrEmpty()) {
+                DotPattern.draw(canvas, output.width, output.height, dotCodeHex)
+            }
             val buffer = ByteArrayOutputStream(jpeg.size)
             if (!output.compress(Bitmap.CompressFormat.JPEG, JPEG_QUALITY, buffer)) {
                 return jpeg

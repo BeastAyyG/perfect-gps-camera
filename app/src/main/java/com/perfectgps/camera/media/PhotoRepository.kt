@@ -56,13 +56,26 @@ class PhotoRepository(context: Context) {
         val lines = WatermarkPolicy.buildLines(placeName, coordinates, noFixLabel)
         executor.execute {
             try {
+                val dotCode = if (location != null && location.isValid()) {
+                    PhotoFingerprint.dotCodeHex(location, captureTimeMillis)
+                } else {
+                    null
+                }
                 val stamped = PhotoWatermarker.apply(
-                        jpeg, lines, rotationDegrees, frontFacing
+                        jpeg, lines, rotationDegrees, frontFacing, dotCode
+                )
+                // Tamper-proof fingerprint: the exact location in full detail
+                // plus a SHA-256 of the image, embedded as a JPEG COM segment.
+                // It touches no pixel, so quality is unchanged. A matching
+                // printer-dot grid (the dot code above) is already in the
+                // photo, and the two marks cross-check on verify.
+                val fingerprinted = PhotoFingerprint.embed(
+                        stamped, location, captureTimeMillis
                 )
                 val photo = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    saveModern(stamped, location, captureTimeMillis, frontFacing)
+                    saveModern(fingerprinted, location, captureTimeMillis, frontFacing)
                 } else {
-                    saveLegacy(stamped, location, captureTimeMillis, frontFacing)
+                    saveLegacy(fingerprinted, location, captureTimeMillis, frontFacing)
                 }
                 callback.onSaved(photo)
             } catch (exception: Exception) {
